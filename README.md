@@ -21,8 +21,8 @@ Here is the HTML code I made for this one
 <body>
     <main>
 
-        <img src="/product-preview-card-component-main/images/image-product-desktop.jpg" width="293px" alt="product" class="desktop">
-        <img src="/product-preview-card-component-main/images/image-product-mobile.jpg" class="mobile" width="345px">
+        <img src="/images/image-product-desktop.jpg" width="323px" alt="product" class="desktop">
+        <img src="/images/image-product-mobile.jpg" class="mobile" width="323px">
 
         <div class="description">
             <h3>PERFUME</h3>
@@ -34,7 +34,7 @@ Here is the HTML code I made for this one
                 <p class="p-2">$149.99</p>
                 <p class="p-3"><s>$169.99</s></p>
             </div>
-            <button><img src="/product-preview-card-component-main/images/icon-cart.svg" alt="cart">&nbsp;Add to Cart</button>
+            <button><img src="/images/icon-cart.svg" alt="cart">&nbsp;Add to Cart</button>
         </div>
 
     </main>
@@ -46,8 +46,8 @@ Here is the HTML code I made for this one
 ```
 ### Notice here that we added two picture, one for desktop and one for the mobile and we did give them different classes
 ```html
-<img src="/product-preview-card-component-main/images/image-product-desktop.jpg" width="293px" alt="product" class="desktop">
-<img src="/product-preview-card-component-main/images/image-product-mobile.jpg" class="mobile" width="345px">
+        <img src="/images/image-product-desktop.jpg" width="323px" alt="product" class="desktop">
+        <img src="/images/image-product-mobile.jpg" class="mobile" width="323px">
 ```
 Let's look into the CSS to see why it will come in handy, and how we will display them 🧐
 ```css
@@ -67,6 +67,7 @@ main {
     flex-direction: row;
     height: 100vh;
     width: 95vh;
+    margin-bottom: 0px;
 }
 
 .mobile {
@@ -84,7 +85,8 @@ main {
     display: flex;
     flex-direction: column;
     text-align: left;
-    height: 440px;
+    height: 485px;
+    width: 320px;
     border-radius: 0px 10px 10px 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -170,7 +172,7 @@ button {
     color: white;
     border: hsl(126, 42%, 38%);
     margin-top: 0;
-    margin-bottom: 1px;
+    margin-bottom: 0;
     cursor: pointer;
 }
 
@@ -184,7 +186,7 @@ button:active {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 67px;
+    margin-top: 0px;
     color: gray;
     font-size: 12px;
     font-family: sans-serif;
@@ -195,6 +197,11 @@ button:active {
     color: rgb(66, 39, 39);
     text-decoration: none;
 }
+
+
+/************\
+  Mobile-view
+\************/
 
 @media only screen and (max-width: 375px) {
     body {
@@ -219,6 +226,9 @@ button:active {
     }
     .description {
         border-radius: 0 0 10px 10px;
+    }
+    .attribution {
+        margin-top: 40px;
     }
 }
 ```
